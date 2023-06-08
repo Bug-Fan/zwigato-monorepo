@@ -9,6 +9,7 @@
       }
     }
   },
+  "defaultProject": "zwigato",
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
@@ -34,6 +35,12 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json"
     ],
-    "sharedGlobals": []
+    "sharedGlobals": [
+      "{workspaceRoot}/workspace.json",
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/tslint.json",
+      "{workspaceRoot}/nx.json",
+      "{workspaceRoot}/.stylelintrc.json"
+    ]
   }
 }

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Registration Confirmation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <style type="text/css">
+    @media screen {
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 400;
+        ..: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v10/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+      }
+
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        ..: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v10/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
+      }
+    }
+
+    body,
+    table,
+    td,
+    a {
+      -ms-text-size-adjust: 100%;
+      /* 1 */
+      -webkit-text-size-adjust: 100%;
+      /* 2 */
+    }
+
+    table,
+    td {
+      mso-table-rspace: 0pt;
+      mso-table-lspace: 0pt;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+
+    a[x-apple-data-detectors] {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+
+    div[style*="margin: 16px 0;"] {
+      margin: 0 !important;
+    }
+
+    body {
+      width: 100% !important;
+      height: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    table {
+      border-collapse: collapse !important;
+    }
+
+    a {
+      color: #1a82e2;
+    }
+
+    img {
+      height: auto;
+      line-height: 100%;
+      text-decoration: none;
+      border: 0;
+      outline: none;
+    }
+  </style>
+</head>
+
+<body style="background-color: #e9ecef;">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td align="center" bgcolor="#e9ecef">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+          <tr>
+            <td align="left" bgcolor="#ffffff"
+              style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
+              <h3 style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">Good
+                Morning,</h3>
+              <h3 style="margin: 0; font-size: 14px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">Start
+                your day with an awesome breakfast. Checkout some of our best snacks. </h3>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#e9ecef">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+          <td>
+            <table>
+              {{#each data.snacks}}
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <p class="card-text">{{this.itemImagePath}}</p>
+                  <h5 class="card-title">{{this.itemName}}</h5>
+                  <p class="card-text">{{this.itemDescription}}</p>
+                  <p class="card-text">{{this.MRP}}</p>
+                  <p class="card-text">{{this.ratingAVG}}</p>
+                </div>
+              </div>
+              {{!-- <div class="container overflow-hidden text-center">
+                <div class="row gy-2">
+                  <div class="col-6">
+                    <div class="p-3"> {{this.itemImagePath}}<br></div>
+                    <div class="p-3"> {{this.itemDescription}}<br></div>
+                    <div class="p-3"> {{this.itemName}}<br></div>
+                    <div class="p-3"> {{this.MRP}}<br></div>
+                    <div class="p-3"> {{this.ratingAVG}}<br></div>
+                  </div>
+                </div>
+              </div> --}}
+              {{/each}}
+            </table>
+          </td>
+          <tr>
+            <td align="left" bgcolor="#ffffff"
+              style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
+              <p style='font-size:0.9em;'>Regards,<br />Zwigato</p>
+            </td>
+          </tr>
+        </table>
+</body>
+
+</html>

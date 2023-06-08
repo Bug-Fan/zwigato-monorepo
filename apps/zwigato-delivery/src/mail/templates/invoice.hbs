@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<style>
+  @font-face {
+    font-family: "BrushCrush";
+    src: url("https://www.thefooddoctor.com/static/media/BrushCrush.43692cd0.eot");
+    src: url("https://www.thefooddoctor.com//static/media/BrushCrush.89984b62.woff") format("woff"), url("https://www.thefooddoctor.com//static/media/BrushCrush.a4b4af27.ttf") format("ttf");
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #322d28;
+  }
+
+  main {
+    margin-top: 4rem;
+    min-height: calc(100vh - 107px);
+  }
+
+  main .inner-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  table.invoice {
+    background: #fff;
+  }
+
+  table.invoice .unp {
+    text-align: center;
+  }
+
+  table.invoice .num {
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8em;
+  }
+
+  table.invoice tr,
+  table.invoice td {
+    background: #fff;
+    text-align: center;
+    font-weight: 400;
+    color: #322d28;
+  }
+
+  table.invoice tr.header td img {
+    max-width: 300px;
+  }
+
+  table.invoice tr.header td h2 {
+    text-align: right;
+    font-family: "BrushCrush", serif;
+    font-weight: 200;
+    font-size: 2rem;
+    color: #1e859e;
+  }
+
+  table.invoice tr.intro td:nth-child(2) {
+    text-align: right;
+  }
+
+  table.invoice tr.details>td {
+    padding-top: 4rem;
+    padding-bottom: 0;
+  }
+
+  table.invoice tr.details td.id,
+  table.invoice tr.details td.qty,
+  table.invoice tr.details th.id,
+  table.invoice tr.details th.qty {
+    text-align: center;
+  }
+
+  table.invoice tr.details td:last-child,
+  table.invoice tr.details th:last-child {
+    text-align: right;
+  }
+
+  table.invoice tr.details table thead,
+  table.invoice tr.details table tbody {
+    position: relative;
+  }
+
+  table.invoice tr.details table thead:after,
+  table.invoice tr.details table tbody:after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: -1px;
+    background: #1e859e;
+  }
+
+  table.invoice tr.totals td {
+    padding-top: 0;
+  }
+
+  table.invoice tr.totals table tr td {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  table.invoice tr.totals table tr td:nth-child(1) {
+    font-weight: 500;
+  }
+
+  table.invoice tr.totals table tr td:nth-child(2) {
+    text-align: right;
+    font-weight: 200;
+  }
+
+  table.invoice tr.totals table tr:nth-last-child(2) td {
+    padding-bottom: 0.5em;
+  }
+
+  table.invoice tr.totals table tr:nth-last-child(2) td:last-child {
+    position: relative;
+  }
+
+  table.invoice tr.totals table tr:nth-last-child(2) td:last-child:after {
+    content: "";
+    height: 4px;
+    width: 110%;
+    border-top: 1px solid #1e859e;
+    border-bottom: 1px solid #1e859e;
+    position: relative;
+    right: 0;
+    bottom: -0.575rem;
+    display: block;
+  }
+
+  table.invoice tr.totals table tr.total td {
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    font-weight: 700;
+  }
+
+  table.invoice tr.totals table tr.total td:last-child {
+    font-weight: 700;
+  }
+
+  .additional-info h5 {
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: "BrushCrush", serif;
+    color: #1e859e;
+  }
+</style>
+
+
+
+
+<body>
+  <header class="top-bar align-center">
+  </header>
+  <div class="row expanded">
+    <main class="columns">
+      <div class="inner-container">
+        <section class="row">
+          <div class="callout large invoice-container">
+            <table class="invoice">
+              <tr class="header">
+                <td class="">
+                  <h2 style="text-align: center;"><b>Zwigato</b></h2>
+                  <h2>Invoice</h2>
+                </td>
+              </tr>
+              <tr class="intro">
+                <td class="">
+                  Hello, {{data.orderInvoice.cutomerName}}
+                </td>
+                <td class="text-right">
+                  <span class="num">Order Id {{data.orderInvoice.orderId}}</span><br>
+                </td>
+              </tr>
+              <tr class="details">
+                <td colspan="2">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="desc">Item Name</th>
+                        <th class="unp">Item Price</th>
+                        <th class="qty">Quantity</th>
+                        <th class="amt">Total Price</th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      {{#each data.itemDetails}}
+                      {{!-- Hello WOrld {{data.itemDetails.orderItem}} --}}
+
+                      {{!-- {{key}} --}}
+                      {{#each this.orderItem}}
+
+                      <tr class="item">
+                        <td class="desc"> {{this.itemName}} </td>
+                        <td class="unp">{{this.itemPrice}}</td>
+                        <td class="qty">{{this.quantity}}</td>
+                        <td class="amt">{{this.itemTotalAmount}}</td>
+                      </tr>
+                      {{/each}}
+                      {{/each}}
+
+
+                    </tbody>
+
+                  </table>
+                </td>
+              </tr>
+              <tr class="totals">
+                <td></td>
+                <td>
+                  <table>
+                    <tr class="subtotal">
+                      <td class="num">Subtotal</td>
+                      <td class="num">{{data.orderInvoice.subTotal}}</td>
+                    </tr>
+                    <tr class="fees">
+                      <td class="num">Delivery Charges</td>
+                      <td class="num">{{data.orderInvoice.deliveyCharges}}</td>
+                    </tr>
+                    <tr class="tax">
+                      <td class="num">CGST</td>
+                      <td class="num">{{data.orderInvoice.cgst}}</td>
+                    </tr>
+                    <tr class="tax">
+                      <td class="num">SGST</td>
+                      <td class="num">{{data.orderInvoice.sgst}}</td>
+                    </tr>
+                    <tr class="total">
+                      <td>Total</td>
+                      <td>{{data.orderInvoice.totalAmount}}</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <section class="additional-info">
+              <div class="row">
+                <div class="columns">
+                  <h5>Customer Details</h5>
+                  <p>{{data.orderInvoice.cutomerName}}</p>
+                  <p>{{data.orderInvoice.customerAddress}}</p>
+                </div>
+
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+</body>
+
+<script>
+  console.log(data.orderInvoice.customerName);
+</script>
+
+
+
+</html>

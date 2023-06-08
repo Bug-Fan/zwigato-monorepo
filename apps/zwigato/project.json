@@ -14,7 +14,6 @@
         "outputPath": "dist/apps/zwigato",
         "main": "apps/zwigato/src/main.ts",
         "tsConfig": "apps/zwigato/tsconfig.app.json",
-        "assets": ["apps/zwigato/src/assets"],
         "isolatedConfig": true,
         "webpackConfig": "apps/zwigato/webpack.config.js"
       },
