@@ -4,7 +4,10 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "prefer-const": "off",
+        "no-irregular-whitespace": "off"
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],

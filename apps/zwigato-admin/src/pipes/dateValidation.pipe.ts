@@ -5,7 +5,6 @@ import {
 } from '@nestjs/common';
 import { EarningRequestDTO } from 'src/admin-dashboard/dto/request/earning.request.dto';
 
-​
 export class DateValidate implements PipeTransform {
   transform(value: EarningRequestDTO, metadata: ArgumentMetadata) {
     if (value.start && value.end) {

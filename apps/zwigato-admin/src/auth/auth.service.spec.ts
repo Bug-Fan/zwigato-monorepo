@@ -1,8 +1,6 @@
 import { Test } from "@nestjs/testing";
 import { AuthService } from "./auth.service";
 import { DataSource } from "typeorm";
-{
-}
 import { JwtService } from "@nestjs/jwt";
 import { MailService } from "../mail/mail.service";
 import { ROLE_CONSTANT } from "../roleConstants";

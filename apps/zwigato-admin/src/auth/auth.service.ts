@@ -61,7 +61,9 @@ export class AuthService {
           "You are not registered. Please Register first"
         );
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async registerManager(
@@ -136,6 +138,8 @@ export class AuthService {
           "You are not registered. Please Register first"
         );
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
