@@ -10,7 +10,7 @@ import { JwtStrategy } from './jwt.strategy';
 @Module({
   imports: [
     MulterModule.register({
-      dest: './upload',
+      dest: './uploads',
       limits: { fileSize: 1024 * 1024 * 4 },
     }),
     JwtModule.registerAsync({
