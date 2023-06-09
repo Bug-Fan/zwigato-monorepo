@@ -74,7 +74,7 @@ export class AuthController {
 
   deleteFiles(files: Array<Express.Multer.File>) {
     files.forEach((file) => {
-      unlink(`${process.cwd()}/upload/${file.filename}`, (er) => {
+      unlink(`${process.cwd()}/uploads/${file.filename}`, (er) => {
         if (er) console.log('Unable to delete file');
         else console.log(`file ${file.filename} deleted`);
       });

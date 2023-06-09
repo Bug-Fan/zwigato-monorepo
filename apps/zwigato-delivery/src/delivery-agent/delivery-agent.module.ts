@@ -9,7 +9,7 @@ import { GeoCoddingService } from 'src/geoCodding.service';
   imports: [
     MailModule,
     MulterModule.register({
-      dest: './upload',
+      dest: './uploads',
       // limits: { fileSize: 1024 * 1024 * 12 },
     }),
   ],

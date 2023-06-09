@@ -1187,9 +1187,9 @@ describe('deliveryAgentService', () => {
         originalname: 'IMG_20201215_065845.jpg',
         encoding: '7bit',
         mimetype: 'image/jpeg',
-        destination: './upload',
+        destination: './uploads',
         filename: '1682664023228-IMG_20201215_065845.jpg',
-        path: 'upload\\1682664023228-IMG_20201215_065845.jpg',
+        path: 'uploads\\1682664023228-IMG_20201215_065845.jpg',
         size: 116502,
       },
       {
@@ -1197,9 +1197,9 @@ describe('deliveryAgentService', () => {
         originalname: 'IMG_20201215_065845.jpg',
         encoding: '7bit',
         mimetype: 'image/jpeg',
-        destination: './upload',
+        destination: './uploads',
         filename: '1682664023229-IMG_20201215_065845.jpg',
-        path: 'upload\\1682664023229-IMG_20201215_065845.jpg',
+        path: 'uploads\\1682664023229-IMG_20201215_065845.jpg',
         size: 116502,
       },
       {
@@ -1207,9 +1207,9 @@ describe('deliveryAgentService', () => {
         originalname: 'IMG_20201215_065845.jpg',
         encoding: '7bit',
         mimetype: 'image/jpeg',
-        destination: './upload',
+        destination: './uploads',
         filename: '1682664023231-IMG_20201215_065845.jpg',
-        path: 'upload\\1682664023231-IMG_20201215_065845.jpg',
+        path: 'uploads\\1682664023231-IMG_20201215_065845.jpg',
         size: 116502,
       },
     ];
@@ -1231,9 +1231,9 @@ describe('deliveryAgentService', () => {
       originalname: 'IMG_20201215_065845.jpg',
       encoding: '7bit',
       mimetype: 'image/jpeg',
-      destination: './upload',
+      destination: './uploads',
       filename: '1682664023228-IMG_20201215_065845.jpg',
-      path: 'upload\\1682664023228-IMG_20201215_065845.jpg',
+      path: 'uploads\\1682664023228-IMG_20201215_065845.jpg',
       size: 116502,
     });
     expect(passBookImagePath).toEqual({
@@ -1241,9 +1241,9 @@ describe('deliveryAgentService', () => {
       originalname: 'IMG_20201215_065845.jpg',
       encoding: '7bit',
       mimetype: 'image/jpeg',
-      destination: './upload',
+      destination: './uploads',
       filename: '1682664023229-IMG_20201215_065845.jpg',
-      path: 'upload\\1682664023229-IMG_20201215_065845.jpg',
+      path: 'uploads\\1682664023229-IMG_20201215_065845.jpg',
       size: 116502,
     });
     expect(agentProfilePath).toEqual({
@@ -1251,9 +1251,9 @@ describe('deliveryAgentService', () => {
       originalname: 'IMG_20201215_065845.jpg',
       encoding: '7bit',
       mimetype: 'image/jpeg',
-      destination: './upload',
+      destination: './uploads',
       filename: '1682664023231-IMG_20201215_065845.jpg',
-      path: 'upload\\1682664023231-IMG_20201215_065845.jpg',
+      path: 'uploads\\1682664023231-IMG_20201215_065845.jpg',
       size: 116502,
     });
   });
