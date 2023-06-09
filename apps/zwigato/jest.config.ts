@@ -8,4 +8,10 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/apps/zwigato',
+  collectCoverageFrom: [
+    '**/*.service.(t)s',
+    '!**/log.service.(t)s',
+    '!**/email.service.(t)s',
+    '!**/geocode.service.(t)s',
+  ],
 };

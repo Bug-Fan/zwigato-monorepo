@@ -8,4 +8,7 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/apps/zwigato-delivery',
+  collectCoverageFrom: [
+    "**/*.service.(t|j)s"
+  ],
 };
