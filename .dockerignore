@@ -1,0 +1,22 @@
+#Not required for containers
+.env*
+.gitignore
+README.md
+
+#Editor config 
+.vscode
+
+#Build folder and node modules
+dist
+node_modules
+
+#File storage Folders 
+uploads
+
+# Docker
+.dockerignore
+docker-compose*.yml
+Dockerfile*
+
+#Jest coverage directory
+coverage

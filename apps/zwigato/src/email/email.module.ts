@@ -24,7 +24,7 @@ import { join } from 'path';
           },
 
           template: {
-            dir: join(__dirname, 'mailTemplates'),
+            dir: join(__dirname, '/email/mailTemplates'),
             adapter: new HandlebarsAdapter(),
             options: {
               strict: true,

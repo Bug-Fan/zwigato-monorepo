@@ -9,6 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
+        "assets": ["apps/zwigato-restaurant/src/email/templates"],
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/apps/zwigato-restaurant",

@@ -9,6 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
+        "assets": ["apps/zwigato-delivery/src/mail/templates"],
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/apps/zwigato-delivery",

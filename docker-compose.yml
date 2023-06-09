@@ -1,0 +1,95 @@
+ 
+services: 
+ postgres:
+    image: postgres:15-alpine
+    container_name: postgres_container_local
+    restart: unless-stopped
+    environment:
+      # https://www.docker.com/blog/how-to-use-the-postgres-docker-official-image/
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-root}
+      # - POSTGRES_INITDB_ARGS=--session_replication_role=replica
+    ports:
+      - '5432:5432'
+    healthcheck:
+      start_period: 20s
+      interval: 10s
+      retries: 5
+      test: [ 'CMD-SHELL', 'pg_isready' ]
+      timeout: 10s
+    networks:
+      default:
+        aliases:
+          - postgres.local
+
+ zwigato-customer:
+    container_name: zwigato-customer
+    env_file:
+      - ./apps/zwigato/.env
+    build:
+      args:
+        - NODE_ENV=development
+      context: .
+      dockerfile: ./apps/zwigato/Dockerfile
+    image: zwigato-customer
+    ports:
+      - '5001:5001'
+    init: true
+    volumes:
+      - ./:/app/
+    depends_on:
+      - postgres
+
+ zwigato-restaurant:
+    container_name: zwigato-restaurant
+    env_file:
+      - ./apps/zwigato-restaurant/.env
+    build:
+      args:
+        - NODE_ENV=development
+      context: .
+      dockerfile: ./apps/zwigato-restaurant/Dockerfile
+    image: zwigato-restaurant
+    ports:
+      - '5002:3000'
+    init: true
+    volumes:
+      - ./:/app/
+    depends_on:
+      - postgres
+
+ zwigato-admin:
+    container_name: zwigato-admin
+    env_file:
+      - ./apps/zwigato-admin/.env
+    build:
+      args:
+        - NODE_ENV=development
+      context: .
+      dockerfile: ./apps/zwigato-admin/Dockerfile
+    image: zwigato-admin
+    ports:
+      - '5003:3000'
+    init: true
+    volumes:
+      - ./:/app/
+    depends_on:
+      - postgres
+
+ zwigato-delivery:
+    container_name: zwigato-delivery
+    env_file:
+      - ./apps/zwigato-delivery/.env
+    build:
+      args:
+        - NODE_ENV=development
+      context: .
+      dockerfile: ./apps/zwigato-delivery/Dockerfile
+    image: zwigato-delivery
+    ports:
+      - '5004:3000'
+    init: true
+    volumes:
+      - ./:/app/
+    depends_on:
+      - postgres

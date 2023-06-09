@@ -12,6 +12,7 @@
         "target": "node",
         "compiler": "tsc",
         "outputPath": "dist/apps/zwigato",
+        "assets": ["apps/zwigato/src/email/mailTemplates"],
         "main": "apps/zwigato/src/main.ts",
         "tsConfig": "apps/zwigato/tsconfig.app.json",
         "isolatedConfig": true,

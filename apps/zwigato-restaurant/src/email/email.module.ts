@@ -22,7 +22,7 @@ import { MailerModule, MailerOptions } from '@nestjs-modules/mailer';
           },
 
           template: {
-            dir: join(__dirname, 'templates'),
+            dir: join(__dirname, '/email/templates'),
             adapter: new HandlebarsAdapter(),
             options: {
               strict: true,
