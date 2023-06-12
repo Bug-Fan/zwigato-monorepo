@@ -36,7 +36,6 @@ WORKDIR $WORKING_DIR
 #########################################################################
 # Stage 1
 # installs production dependencies
-# running audit fix is not necessary here as this will not be part of final image
 #########################################################################
 FROM devbuilder AS baseimage
 
@@ -67,7 +66,7 @@ RUN npm config list \
     && npm cache clean --force
 
 # this should probably be the node user but has to be tested for cross-platform compatibility
-#startup command for the container
+# startup command for the container
 CMD npm run nx serve ${APP}
 
 #########################################################################
@@ -79,18 +78,3 @@ FROM dev AS source
 # only copy the current app
 COPY nx.json tsconfig.base.json .eslintrc.json jest.config.ts jest.preset.js ./
 COPY ./apps/${APP}/ ./apps/${APP}/
-
-#########################################################################
-# Stage 4
-# runs linting and tests on production source
-#########################################################################
-# FROM source AS test
-
-# ENV NODE_ENV=development
-# ENV PATH=$WORKING_DIR/node_modules/.bin:$PATH
-
-# COPY --from=dev $WORKING_DIR/node_modules $WORKING_DIR/node_modules
-
-# RUN npm run nx lint ${APP}
-
-# RUN npm run nx test ${APP}
